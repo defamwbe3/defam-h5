@@ -1,0 +1,305 @@
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+@import 'uview-ui/theme.scss';
+$IMG_URL: '/static/images/'; //css中背景图片变量。js图片变量在env.js
+
+// 底部
+$footerColor: #fff;
+// 全局背景色
+$bgColor: #FAFAFE;
+//首页底板颜色
+$indexBgColor:#D3E96F;
+// 渐变背景色
+$linerColor: linear-gradient(90deg, #C0E021, #EEF6C1);
+
+// 主题颜色
+$themeColor: #01C8E5;
+
+//边框颜色
+$borderColor: #F0F1F9;
+
+// 二级标签的颜色
+// $secondFontColor: rgba(0, 0, 0, 0.6);
+
+// 对应的是0.6
+$secondFontColor: #00000099;
+// $secondFontColor: #ffffff99;
+
+//弹窗文字的颜色
+$modsname: #000000;
+
+//文字的颜色
+$textwhite: #fff;
+$textblack: #111;
+$textbl: #373748;
+
+//按钮背景色
+// $btnColor: linear-gradient(320.28deg, #01c8e5 0%, #f177c1 100%);
+$btnColor: #1B1BDD;
+$btnRadius: 44rpx;
+$btnText: #FFFFFF;
+
+$tipColor: #fff;
+//轮播小标签的颜色
+$swipericon: rgba(255, 255, 255, 0.6);
+
+// 按钮 一般用于主题按钮
+button {
+	flex: 1;
+	height: 88rpx;
+	line-height: 88rpx;
+	text-align: center;
+	font-weight: 500;
+	border-radius: $btnRadius;
+	background: $btnColor;
+	color: $btnText;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&::after {
+		border: 0;
+	}
+	&:active {
+		background: $btnColor;
+		color: $btnText;
+		opacity: 0.5;
+	}
+
+}
+button[disabled]:not([type]), button[disabled][type=default] {
+	background: $btnColor;
+		color: $btnText;
+		opacity: 0.8;
+}
+// input 占位颜色
+.pl {
+	font-size: 28rpx;
+	color: #999;
+}
+
+// 文字渐变
+.text-clip {
+	background: linear-gradient(0deg, rgba(128,82,30,0.82) 0%, rgba(241,188,92,0.82) 3.8818359375%, rgba(246,193,101,0.82) 14.6728515625%, rgba(253,234,132,0.82) 23.681640625%, rgba(251,240,134,0.82) 43.994140625%, rgba(254,243,153,0.82) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.theme-color {
+	color: $themeColor;
+}
+
+.am {
+	-webkit-transition: all 0.3s linear 0s;
+	-moz-transition: all 0.3s linear 0s;
+	transition: all 0.3s linear 0s;
+}
+
+.am-ease {
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+
+// 1像素（1px） bt:上边线条(top); bl:左边线条(left); br:右边线条(right); bb:下边线条(bottom)
+.bt-1px {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2rpx;
+		background: $borderColor;
+		top: 0;
+		left: 0;
+	}
+}
+.bl-1px {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 2rpx;
+		height: 100%;
+		background: $borderColor;
+		top: 0;
+		left: 0;
+	}
+}
+.br-1px {
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 2rpx;
+		height: 100%;
+		background: $borderColor;
+		top: 0;
+		right: 0;
+	}
+}
+.bb-1px {
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2rpx;
+		background: $borderColor;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+/* flex布局 */
+.flex {
+	display: flex;
+}
+
+.flex-middle {
+	display: flex;
+	align-items: center;
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
+
+/* 自适应剩余空间 */
+.flex-width {
+	flex: 1;
+	min-width: 0;
+}
+
+.flex-height {
+	flex: 1;
+	min-height: 0;
+}
+
+/* 自动换行 */
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+/* 让元素沿着容器主轴的中心点和交叉轴中心对齐 */
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.flex-around {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+/* 沿垂直方向放置 flex 子项 */
+.flex-col {
+	flex-direction: column;
+}
+
+/* 让元素沿着容器主轴排列，并使每个元素之间的距离相等 */
+.justify-between {
+	justify-content: space-between;
+}
+
+/* 让元素沿着容器主轴的中心点对齐 */
+.justify-center {
+	justify-content: center;
+}
+
+/* 让元素沿着容器主轴排列，并使每个元素两侧的距离相等。 */
+.justify-around {
+	justify-content: space-around;
+}
+
+/* 让元素沿着容器主轴的结束点对齐 */
+.justify-end {
+	justify-content: flex-end;
+}
+.justify-start {
+	display: flex;
+	justify-content: flex-start;
+	
+}
+.justify-start-center {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	
+}
+/* 将元素沿着容器交叉轴的起点对齐 */
+.items-start {
+	align-items: flex-start;
+}
+
+/* 将元素沿着容器交叉轴的终点对齐 */
+.items-end {
+	align-items: flex-end;
+}
+
+/* 沿着容器的交叉轴中心对齐元素 */
+.items-center {
+	align-items: center;
+}
+
+/* 文字单行省略 */
+.text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.fixed_button{
+	// margin: 0rpx 30rpx;
+	font-weight: 700;
+	font-size: 32rpx;
+	text-align: center;
+	color: #222;
+	position: fixed;
+	width: 93vw;
+	bottom: 40rpx;
+}
+/* 文字多行省略 */
+@mixin multi-ellipsis($clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//两行省略
+.much-ell-two{
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+// 自适应正方形
+.square-box {
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		padding-bottom: 100%;
+	}
+
+	// 图片自适应
+	.thumb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+

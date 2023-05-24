@@ -1,0 +1,66 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>验证</title>
+	<style>
+	    body{
+	        background: rgba(0, 0, 0, 0.3);
+	    }
+	    #__nc {
+	        position: relative;
+	        width: 300px;
+	        height: 60px;
+	        margin: 0 auto;
+	        text-align: center;
+	    }
+	 
+	    #nc {
+	        bottom: 0;
+	        left: 50%;
+	        transform: translate(-50%);
+	    }
+	 
+	    .nc-container #nc_1_wrapper {
+	        width: 100% !important;
+	    }
+	 
+	    .nc-container .nc_scale span {
+	        height: 35px !important;
+	        line-height: 35px !important;
+	    }
+	</style> 
+  </head>
+  <body>
+    <div class="mask"></div>
+    <div id="__nc">
+		<div id="nc"></div>
+	</div>
+    <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>  
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.1.js"></script> 
+    <script>
+		document.addEventListener('plusready', function() {
+		    var wv = plus.webview.currentWebview()
+		    // 腾讯滑动验证
+		     let captchaId = '2031629192'
+		     // 腾讯滑块验证码appid生成一个滑块验证码对象
+		     var captcha = new TencentCaptcha(captchaId, function(data) {
+				 if (data.ret === 0) {
+					//  uni.postMessage({
+					// 	 data
+					//  })
+					window.location.href = 'push?params=' + JSON.stringify(data)
+				 }
+		    	 wv.hide()
+		     })
+		    captcha.langFun()
+		    // 滑块显示
+		    captcha.show()
+		})
+    </script> 
+  </body>
+</html>

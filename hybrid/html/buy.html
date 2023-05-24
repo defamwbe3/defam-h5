@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>支付</title>
+</head>
+<style>
+	.mask {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		background: #f0f0f0;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+
+	@-webkit-keyframes rotation {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.loader {
+		width: 48px;
+		height: 48px;
+		margin: 30vh auto 0;
+		border: 3px solid #FFF;
+		border-radius: 50%;
+		display: block;
+		text-align: center;
+		position: relative;
+		-webkit-animation: rotation 1s linear infinite;
+		animation: rotation 1s linear infinite;
+	}
+
+	.loader:after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 3px solid transparent;
+		border-bottom-color: #FF3D00;
+	}
+</style>
+
+<body>
+	<div id="app">
+		<!-- <div v-html="from">{{from}}</div>
+			{{form_id}} {{form_token}} {{type}} -->
+		<div class="mask">
+			<div class="loader"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/axios.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</body>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			form_id: '',
+			from: null,
+			form_token: '',
+			base_url: '',
+			type: ''
+		},
+		created() {
+		},
+		mounted() {
+			this.form_id = this.getParams('id')
+			this.form_token = this.getParams('token')
+			this.base_url = this.getParams('base_url')
+			this.type = this.getParams('type')
+			this.getinfo()
+		},
+		methods: {
+			getParams(key) {
+				var ops = {};
+				window.location.href.split('?')[1].split('&').map(i => ops[(i.split('=')[0])] = i.split('=')[1]);
+				return ops[key]
+			},
+			// 返回上一页
+			back() {
+				uni.navigateBack()
+			},
+			getinfo() {
+				let _this = this
+				console.log(_this.form_id, _this.type, 'fff')
+				axios({
+					headers: {
+						'content-type': 'application/json',
+						'Accept': 'application/json',
+						'authorization': 'Bearer ' + _this.form_token,
+					},
+					method: 'post',
+					dataType: 'json',
+					withCredentials: false,
+					url: _this.base_url + 'recharge/appFrom',
+					data: {
+						id: _this.form_id,
+						type: _this.type
+					}
+				}).then(res => {
+					if (res.data.code == 10000) {
+						const div = document.createElement('div')
+						div.innerHTML = res.data.data
+						document.body.appendChild(div)
+						document.forms[0].submit()
+					} else {
+						console.log(res.message, 'message')
+					}
+				}).catch(err => {
+					console.log(err, 'err')
+				})
+			}
+		}
+	})
+</script>
+
+</html>

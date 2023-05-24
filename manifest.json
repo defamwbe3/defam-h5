@@ -1,0 +1,341 @@
+{
+    "name" : "超级裂变资讯平台",
+    "appid" : "__UNI__4EFA900",
+    "description" : "DeFam",
+    "versionName" : "1.0.2",
+    "versionCode" : 102,
+    "transformPx" : false,
+    "app-plus" : {
+        "optimization" : {
+            "subPackages" : true
+        },
+        "runmode" : "liberate",
+        "safearea" : {
+            "background" : "#fff",
+            "bottom" : {
+                "offset" : "auto"
+            }
+        },
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 200
+        },
+        "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "modules" : {
+            "Payment" : {},
+            "Push" : {}
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ],
+                "autoSdkPermissions" : true
+            },
+            "ios" : {
+                "privacyDescription" : {
+                    "NSLocalNetworkUsageDescription" : "",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "需要同意获取您的位置信息才能展示附近信息",
+                    "NSLocationAlwaysUsageDescription" : "需要同意获取您的位置信息才能展示附近信息",
+                    "NSLocationWhenInUseUsageDescription" : "需要同意获取您的位置信息才能展示附近信息",
+                    "NSPhotoLibraryAddUsageDescription" : "需要同意访问您的相册才能保存图片",
+                    "NSPhotoLibraryUsageDescription" : "需要同意访问您的相册才能选取图片",
+                    "NSCameraUsageDescription" : "需要同意访问您的摄像头才能拍摄照片"
+                },
+                "idfa" : false,
+                "dSYMs" : false
+            },
+            "sdkConfigs" : {
+                "ad" : {},
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "appleiap" : {}
+                },
+                "geolocation" : {
+                    "amap" : {
+                        "__platform__" : [ "android" ],
+                        "appkey_ios" : "949f86b55f78c*****de010206494",
+                        "appkey_android" : "4cda3beaada162ab2eb64ad317200b97"
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "949f86b55f78c*****de010206494",
+                        "appkey_android" : "0d51d7add8*****bcbe264dac409"
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wx522bf*****319ae",
+                        "appsecret" : "531b39d*****2bf5f6e83c7238fb4dc",
+                        "UniversalLinks" : "https:/uni-universallinks/__UNI__EB95F06"
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wx522bf*****19ae",
+                        "UniversalLinks" : "https:/uni-universallinks/__UNI__EB95F06"
+                    }
+                },
+                "push" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "nativePlugins" : {
+            "JG-JCore" : {
+                "JPUSH_APPKEY_IOS" : "",
+                "JPUSH_CHANNEL_IOS" : "",
+                "JPUSH_APPKEY_ANDROID" : "5db5604dc75376672fe4ed16",
+                "JPUSH_CHANNEL_ANDROID" : "developer-default",
+                "__plugin_info__" : {
+                    "name" : "JG-JCore",
+                    "description" : "极光推送JCore插件",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {
+                        "JPUSH_APPKEY_IOS" : {
+                            "des" : "[iOS]极光portal配置应用信息时分配的AppKey",
+                            "key" : "JCore:APP_KEY",
+                            "value" : ""
+                        },
+                        "JPUSH_CHANNEL_IOS" : {
+                            "des" : "[iOS]用于统计分发渠道，不需要可填默认值developer-default",
+                            "key" : "JCore:CHANNEL",
+                            "value" : ""
+                        },
+                        "JPUSH_APPKEY_ANDROID" : {
+                            "des" : "[Android]极光portal配置应用信息时分配的AppKey",
+                            "key" : "JPUSH_APPKEY",
+                            "value" : ""
+                        },
+                        "JPUSH_CHANNEL_ANDROID" : {
+                            "des" : "[Android]用于统计分发渠道，不需要可填默认值developer-default",
+                            "key" : "JPUSH_CHANNEL",
+                            "value" : ""
+                        }
+                    }
+                }
+            },
+            "JG-JPush" : {
+                "JPUSH_ISPRODUCTION_IOS" : "",
+                "JPUSH_ADVERTISINGID_IOS" : "",
+                "JPUSH_DEFAULTINITJPUSH_IOS" : "",
+                "JPUSH_OPPO_APPKEY" : "",
+                "JPUSH_OPPO_APPID" : "",
+                "JPUSH_OPPO_APPSECRET" : "",
+                "JPUSH_VIVO_APPKEY" : "",
+                "JPUSH_VIVO_APPID" : "",
+                "JPUSH_MEIZU_APPKEY" : "",
+                "JPUSH_MEIZU_APPID" : "",
+                "JPUSH_XIAOMI_APPKEY" : "",
+                "JPUSH_XIAOMI_APPID" : "",
+                "__plugin_info__" : {
+                    "name" : "JG-JPush",
+                    "description" : "极光推送Hbuilder插件",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {
+                        "JPUSH_ISPRODUCTION_IOS" : {
+                            "des" : "[iOS]是否是生产环境，是填true，不是填false或者不填",
+                            "key" : "JPush:ISPRODUCTION",
+                            "value" : ""
+                        },
+                        "JPUSH_ADVERTISINGID_IOS" : {
+                            "des" : "[iOS]广告标识符（IDFA）如果不需要使用IDFA，可不填",
+                            "key" : "JPush:ADVERTISINGID",
+                            "value" : ""
+                        },
+                        "JPUSH_DEFAULTINITJPUSH_IOS" : {
+                            "des" : "[iOS]是否默认初始化，是填true，不是填false或者不填",
+                            "key" : "JPush:DEFAULTINITJPUSH",
+                            "value" : ""
+                        },
+                        "JPUSH_OPPO_APPKEY" : {
+                            "des" : "厂商OPPO-appkey,示例：OP-12345678",
+                            "key" : "OPPO_APPKEY",
+                            "value" : ""
+                        },
+                        "JPUSH_OPPO_APPID" : {
+                            "des" : "厂商OPPO-appId,示例：OP-12345678",
+                            "key" : "OPPO_APPID",
+                            "value" : ""
+                        },
+                        "JPUSH_OPPO_APPSECRET" : {
+                            "des" : "厂商OPPO-appSecret,示例：OP-12345678",
+                            "key" : "OPPO_APPSECRET",
+                            "value" : ""
+                        },
+                        "JPUSH_VIVO_APPKEY" : {
+                            "des" : "厂商VIVO-appkey,示例：12345678",
+                            "key" : "com.vivo.push.api_key",
+                            "value" : ""
+                        },
+                        "JPUSH_VIVO_APPID" : {
+                            "des" : "厂商VIVO-appId,示例：12345678",
+                            "key" : "com.vivo.push.app_id",
+                            "value" : ""
+                        },
+                        "JPUSH_MEIZU_APPKEY" : {
+                            "des" : "厂商MEIZU-appKey,示例：MZ-12345678",
+                            "key" : "MEIZU_APPKEY",
+                            "value" : ""
+                        },
+                        "JPUSH_MEIZU_APPID" : {
+                            "des" : "厂商MEIZU-appId,示例：MZ-12345678",
+                            "key" : "MEIZU_APPID",
+                            "value" : ""
+                        },
+                        "JPUSH_XIAOMI_APPKEY" : {
+                            "des" : "厂商XIAOMI-appKey,示例：MI-12345678",
+                            "key" : "XIAOMI_APPKEY",
+                            "value" : ""
+                        },
+                        "JPUSH_XIAOMI_APPID" : {
+                            "des" : "厂商XIAOMI-appId,示例：MI-12345678",
+                            "key" : "XIAOMI_APPID",
+                            "value" : ""
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "quickapp" : {},
+    "mp-weixin" : {
+        "requiredPrivateInfos" : [ "chooseLocation", "getLocation" ],
+        "appid" : "wx6edeade246397fff",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : false,
+            "minified" : true,
+            "postcss" : true,
+            "checkSiteMap" : false
+        },
+        "optimization" : {
+            "subPackages" : true
+        },
+        "plugins" : {},
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "计算附近商家位置"
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "component2" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-qq" : {
+        "optimization" : {
+            "subPackages" : true
+        },
+        "appid" : "",
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "appid" : "",
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "appid" : "",
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "h5" : {
+        "title" : "DeFam",
+        "domain" : "api.maifen.szyqa.com",
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : "ME2BZ-ONPKG-WZ5Q5-IX62P-3BEAQ-VJBJZ"
+                }
+            }
+        }
+    },
+    "_spaceID" : "f0536ae9*****a7c3e11334",
+    "uniStatistics" : {
+        "enable" : false
+    }
+}

@@ -1,0 +1,818 @@
+{
+	"usingComponts": true,
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "开发", //模式名称
+				"path": "pages/index/index" //启动页面
+				// "query": "spm=11.4.6.3.1.6" //启动参数
+			}
+		]
+	},
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+		"^engine-(.*)": "@/components/engine-$1/engine-$1.vue",
+		"^shopro-(.*)": "@/components/shopro-$1/shopro-$1.vue"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			},
+			"meta": {
+				"auth": false, //需要登录
+				"async": false, //是否同步
+				"title": "首页", //标题
+				"group": "首页" ,//分组
+				"pcUrl": "/"
+				
+			}
+		},
+		{
+			"path": "pages/index/realimeinfo",
+			"style": {
+				"navigationBarTitleText": "资讯",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			},
+			"meta": {
+				"auth": false,
+				"async": false,
+				"title": "资讯",
+				"group": "资讯",
+				"pcUrl": "/news"
+			}
+		},
+		{
+			"path": "pages/index/circle",
+			"style": {
+				"navigationBarTitleText": "圈子",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			},
+			"meta": {
+				"auth": false,
+				"async": false,
+				"title": "圈子",
+				"group": "圈子",
+				"pcUrl": "/circle"
+			}
+		},
+		{
+			"path": "pages/index/articledetails",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"enablePullDownRefresh": true
+			},
+			"meta": {
+				"auth": false,
+				"async": false,
+				"title": "文章详情",
+				"group": "首页",
+				"pcUrl": "/articleDetail",
+				"qu":"id",
+				"c":"&type=realinfo&ctype=1"
+				
+			}
+		},
+		{
+			"path": "pages/index/koldetail",
+			"style": {
+				"navigationBarTitleText": "kol详情",
+				"enablePullDownRefresh": true
+			},
+			"meta": {
+				"auth": false,
+				"async": false,
+				"title": "kol详情",
+				"group": "首页"
+			}
+		}
+        ,{
+            "path" : "pages/index/cavsImg",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"subPackages": [
+		{
+			"root": "pages/release",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "发布",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "发布",
+						"group": "发布"
+					}
+				},
+				{
+					"path": "posting",
+					"style": {
+						"navigationBarTitleText": "发帖",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "发帖",
+						"group": "发布"
+					}
+				},
+				{
+					"path": "postarticle",
+					"style": {
+						"navigationBarTitleText": "发文章",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "发文章",
+						"group": "发布"
+					}
+				},
+				{
+					"path": "postarticlenext",
+					"style": {
+						"navigationBarTitleText": "发文章",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "发文章",
+						"group": "发布"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/activity",
+			"pages": [
+				{
+					"path": "activity",
+					"style": {
+						"navigationBarTitleText": "活动",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "活动",
+						"group": "活动",
+						"pcUrl": "/active"
+					}
+				},
+				{
+					"path": "activitydetail",
+					"style": {
+						"navigationBarTitleText": "活动详情",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "活动",
+						"group": "活动",
+						"pcUrl": "/signUp",
+						"qu":"id",
+						"c":""
+					}
+				},
+				{
+					"path": "airdrop",
+					"style": {
+						"navigationBarTitleText": "空投",
+						"navigationBarBackgroundColor": "#FAFAFE",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "空投地址",
+						"group": "活动"
+					}
+				},
+				{
+					"path": "qualification",
+					"style": {
+						"navigationBarTitleText": "资质认证",
+						"navigationBarBackgroundColor": "#FAFAFE",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "资质认证",
+						"group": "活动"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/user",
+			"pages": [
+				{
+					"path": "user",
+					"style": {
+						"navigationBarTitleText": "我的",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的",
+						"group": "我的",
+						"pcUrl": "/"
+					}
+				},
+				{
+					"path": "about",
+					"style": {
+						"navigationBarTitleText": "关于我们",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的",
+						"group": "我的"
+					}
+				},
+				{
+					"path": "resume",
+					"style": {
+						"navigationBarTitleText": "个人主页",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的",
+						"group": "我的"
+					}
+				},
+				{
+					"path": "sets/index",
+					"style": {
+						"navigationBarTitleText": "设置",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的",
+						"group": "我的"
+					}
+				},
+				{
+					"path": "sets/profile",
+					"style": {
+						"navigationBarTitleText": "个人信息",
+						"navigationStyle": "custom"
+						
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "设置",
+						"group": "设置"
+					}
+				},
+				{
+					"path": "sets/editItem",
+					"style": {
+						"navigationBarTitleText": "修改个人信息",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "修改个人信息",
+						"group": "设置"
+					}
+				},
+				{
+					"path": "news/newsIndex",
+					"style": {
+						"navigationBarTitleText": "消息",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "消息",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "news/details",
+					"style": {
+						"navigationBarTitleText": "详情",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "消息",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "four/fans",
+					"style": {
+						"navigationBarTitleText": "我的粉丝",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的粉丝",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "four/attention",
+					"style": {
+						"navigationBarTitleText": "我的关注",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的关注",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "four/collect",
+					"style": {
+						"navigationBarTitleText": "我的收藏",
+						"enablePullDownRefresh": true,
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的收藏",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "integral/index",
+					"style": {
+						"navigationBarTitleText": "积分商城",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "积分商城",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "integral/integralDetail",
+					"style": {
+						"navigationBarTitleText": "商品详情",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "商品详情",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "integral/countter",
+					"style": {
+						"navigationBarTitleText": "商品兑换记录",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "商品兑换记录",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "integral/convert",
+					"style": {
+						"navigationBarTitleText": "商品兑换详情",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "商品兑换详情",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "treasuremap/treasure",
+					"style": {
+						"navigationBarTitleText": "藏宝图兑换",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "藏宝图兑换",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "treasuremap/treasureDetail",
+					"style": {
+						"navigationBarTitleText": "藏宝图详情",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "藏宝图详情",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "treasuremap/counter",
+					"style": {
+						"navigationBarTitleText": "兑换记录",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "兑换记录",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "invite/invitation",
+					"style": {
+						"navigationBarTitleText": "我的邀请",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的邀请",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "invite/count",
+					"style": {
+						"navigationBarTitleText": "邀请记录",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "邀请记录",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "award/award",
+					"style": {
+						"navigationBarTitleText": "奖励中心",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "奖励中心",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "award/awardDetail",
+					"style": {
+						"navigationBarTitleText": "奖励中心",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "奖励中心",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "award/coin",
+					"style": {
+						"navigationBarTitleText": "积分兑换规则",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "积分兑换规则",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "active/index",
+					"style": {
+						"navigationBarTitleText": "我的活动",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的活动",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "mymap/myMap",
+					"style": {
+						"navigationBarTitleText": "我的藏宝图",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "我的藏宝图",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "mymap/mapDetail",
+					"style": {
+						"navigationBarTitleText": "国潮插画系列",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "国潮插画系列",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "wallet/address",
+					"style": {
+						"navigationBarTitleText": "钱包地址",
+						"navigationStyle": "custom",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "钱包地址",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "wallet/newsaddress",
+					"style": {
+						"navigationBarTitleText": "新增地址",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "钱包地址",
+						"group": "用户"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/public",
+			"pages": [
+				{
+					"path": "success",
+					"style": {
+						"navigationBarTitleText": "成功"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "成功",
+						"group": "公共"
+					}
+				},
+				{
+					"path": "webview",
+					"style": {
+						"navigationBarTitleText": ""					
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "",
+						"group": "公共"
+					}
+				},
+				{
+					"path": "login",
+					"style": {
+						"navigationBarTitleText": "登录",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "登录",
+						"group": "公共"
+					}
+				},
+				{
+					"path": "register",
+					"style": {
+						"navigationBarTitleText": "注册",
+						"navigationStyle": "custom"
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "注册",
+						"group": "公共"
+					}
+				},
+				{
+					"path": "editor",
+					"style": {
+						"navigationBarTitleText": "富文本"
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "富文本",
+						"group": "公共"
+					}
+				},
+				{
+					"path": "wechat",
+					"style": {
+						"navigationBarTitleText": " "
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "",
+						"group": "公共"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/other",
+			"pages": [
+				{
+					"path": "messageList",
+					"style": {
+						"navigationBarTitleText": "最新公告",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "最新公告",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "messageDetail",
+					"style": {
+						"navigationBarTitleText": "公告详情",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "公告详情",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "singlePage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "newsList",
+					"style": {
+						"navigationBarTitleText": "消息",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "公告",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "newsDetail",
+					"style": {
+						"navigationBarTitleText": "公告详情",
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "公告详情",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "search",
+					"style": {
+						"navigationBarTitleText": "搜索",
+						"enablePullDownRefresh": true,
+						"navigationBarBackgroundColor": "#FAFAFE"
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "搜索",
+						"group": "其他"
+					}
+				},
+				{
+					"path": "searchlist",
+					"style": {
+						"navigationBarTitleText": "搜索",
+						"enablePullDownRefresh": true,
+						"navigationBarBackgroundColor": "#FAFAFE"
+					},
+					"meta": {
+						"auth": false,
+						"async": false,
+						"title": "搜索",
+						"group": "其他"
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": [
+				"pages/user",
+				"pages/activity",
+				"pages/other",
+				"pages/public",
+				"pages/release"
+			]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "shopro-plus",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff"
+	}
+}
