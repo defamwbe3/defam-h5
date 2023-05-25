@@ -55,7 +55,7 @@
 		z-index: 999;
 	}
 	.search-box {
-		width: 702rpx;
+		width: 450rpx;
 		margin: 0 auto;
 	}
 	// .numlist{

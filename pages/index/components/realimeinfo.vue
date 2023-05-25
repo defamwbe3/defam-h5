@@ -70,12 +70,35 @@
 				@integralhandles="integralhandles" :shareid="shareid" :sharetype="2"></sharemodel>
 		</block>
 		<block v-else>
-			<view class="list" v-for="(item,index) in list" :key="index">
-				<!-- 单图 -->
-				<view class="items flex-between" v-if="item.image_text&&item.image_text.length==1"
-					@click="todetailhandle(item)">
-					<view class="left">
+			<view v-if="type == 2" class="time-line">
+				<view class="list" v-for="(item,index) in list" :key="index">
+					<!-- 单图 -->
+					<view class="time-yuan"></view>
+					<view class="time-xian"></view>
+					<view class="time-text">{{item.created_at_old}}</view>
+					<view class="items flex-between" v-if="item.image_text&&item.image_text.length==1"
+						@click="todetailhandle(item)">
+						<view class="left">
+							<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
+							<view class="bottom flex-middle">
+								<!-- 是否显示置顶 -->
+								<view class="topping" v-if="item.is_top==1">置顶</view>
+								<view class="text">{{item.comments}}评论</view>
+								<view class="text">{{item.created_at}}</view>
+							</view>
+						</view>
+						<view class="right">
+							<image :src="item.image_text[0]" mode=""></image>
+						</view>
+					</view>
+					<!-- 多图 -->
+					<view class="items item-many" v-else @click="todetailhandle(item)">
 						<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
+						<view class="images flex-between" v-if="item.image_text.length>0">
+							<image v-for="(items,indexs) in item.image_text" :key="indexs" v-if="indexs<=2" :src="items" mode="">
+							</image>
+							<view style="width: 210rpx;"></view>
+						</view>
 						<view class="bottom flex-middle">
 							<!-- 是否显示置顶 -->
 							<view class="topping" v-if="item.is_top==1">置顶</view>
@@ -83,23 +106,40 @@
 							<view class="text">{{item.created_at}}</view>
 						</view>
 					</view>
-					<view class="right">
-						<image :src="item.image_text[0]" mode=""></image>
-					</view>
 				</view>
-				<!-- 多图 -->
-				<view class="items item-many" v-else @click="todetailhandle(item)">
-					<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
-					<view class="images flex-between" v-if="item.image_text.length>0">
-						<image v-for="(items,indexs) in item.image_text" :key="indexs" v-if="indexs<=2" :src="items" mode="">
-						</image>
-						<view style="width: 210rpx;"></view>
+			</view>
+			<view v-else>
+				<view class="list" v-for="(item,index) in list" :key="index">
+					<!-- 单图 -->
+					<view class="items flex-between" v-if="item.image_text&&item.image_text.length==1"
+						@click="todetailhandle(item)">
+						<view class="left">
+							<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
+							<view class="bottom flex-middle">
+								<!-- 是否显示置顶 -->
+								<view class="topping" v-if="item.is_top==1">置顶</view>
+								<view class="text">{{item.comments}}评论</view>
+								<view class="text">{{item.created_at}}</view>
+							</view>
+						</view>
+						<view class="right">
+							<image :src="item.image_text[0]" mode=""></image>
+						</view>
 					</view>
-					<view class="bottom flex-middle">
-						<!-- 是否显示置顶 -->
-						<view class="topping" v-if="item.is_top==1">置顶</view>
-						<view class="text">{{item.comments}}评论</view>
-						<view class="text">{{item.created_at}}</view>
+					<!-- 多图 -->
+					<view class="items item-many" v-else @click="todetailhandle(item)">
+						<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
+						<view class="images flex-between" v-if="item.image_text.length>0">
+							<image v-for="(items,indexs) in item.image_text" :key="indexs" v-if="indexs<=2" :src="items" mode="">
+							</image>
+							<view style="width: 210rpx;"></view>
+						</view>
+						<view class="bottom flex-middle">
+							<!-- 是否显示置顶 -->
+							<view class="topping" v-if="item.is_top==1">置顶</view>
+							<view class="text">{{item.comments}}评论</view>
+							<view class="text">{{item.created_at}}</view>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -113,7 +153,7 @@
 	import sharemodel from './sharemodel.vue'
 	// import kolComment from './kolComment.vue'
 	export default {
-		props: ['list', 'tab','tabsactivetop'],
+		props: ['list', 'tab','tabsactivetop','type'],
 		components: {
 			sharemodel,
 			// kolComment,
@@ -420,4 +460,46 @@
 			}
 		}
 	}
+	.time-line{
+		padding-left: 60rpx;
+		.list{
+			position: relative;
+		}
+		.time-yuan{
+			display: inline-block;
+			contain: '';
+			width: 20rpx;
+			height: 20rpx;
+			background:#e3e6ed;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: -44rpx;
+		}
+		.time-xian{
+			display: inline-block;
+			contain: '';
+			width: 6rpx;
+			height: calc(100% + 20rpx);
+			background:#e3e6ed;
+			position: absolute;
+			top: 0;
+			left: -38rpx;
+			
+		}
+		.time-text{
+			color: #bec0c5;
+			padding-left: 30rpx;
+			margin-bottom: 10rpx;
+		}
+	}
+	.time-line .list:last-of-type .time-xian{
+		display: none;
+	}
+		// .time-yuan:last-of-type{
+		// 	display: none;
+		// }
+		// .time-xian:last-of-type{
+		// 	display: none;
+		// }
 </style>

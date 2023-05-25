@@ -56,7 +56,7 @@
 	.swiper-banner {
 		position: relative;
 		z-index: 2;
-		margin: 0 16rpx;
+		padding: 0 40rpx;
 		padding-top: 20upx;
 
 

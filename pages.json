@@ -36,7 +36,7 @@
 		{
 			"path": "pages/index/realimeinfo",
 			"style": {
-				"navigationBarTitleText": "资讯",
+				"navigationBarTitleText": "快讯",
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": true
 			},

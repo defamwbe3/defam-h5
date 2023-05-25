@@ -61,9 +61,9 @@ export default {
 				{
 					activeImage: this.$IMG_URL+"tabbar/tab_icon_wz_s1.png",
 					image: this.$IMG_URL+"tabbar/tab_icon_wz_n.png",
-					name: "资讯",
+					name: "快讯",
 					path: "/pages/index/realimeinfo",
-					path_name: "资讯",
+					path_name: "快讯",
 					path_type: 1,
 					show: true
 				},

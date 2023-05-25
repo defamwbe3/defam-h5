@@ -231,6 +231,7 @@
 								<u-scroll-list>
 									<view @click="toDetail(item)" class="jingxuan-item" v-for="(item, index) in jingxuanList" :key="index">
 										<image :src="item.f_img"></image>
+										<!-- <u--image :showLoading="true" :src="item.f_img" width="80px" height="80px" @click="click"></u--image> -->
 										<view>{{item.title}}</view>
 									</view>
 								</u-scroll-list>
@@ -637,9 +638,6 @@
 					code: 'index'
 				}, 'get').then((res) => {
 					uni.stopPullDownRefresh()
-					res.data[0].title = 6666666
-					res.data[1].title = 6666666
-					res.data[2].title = 6666666
 					this.bannerList = res.data || []
 				}).catch(() => {})
 			},
@@ -839,7 +837,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding-left: 20rpx;
+			padding-left: 40rpx;
 			height: 60rpx;
 			margin-top: 20rpx;
 
@@ -852,7 +850,7 @@
 		}
 
 		.jingxuan-box {
-			padding-left: 20rpx;
+			padding-left: 40rpx;
 			// 	overflow-y: hidden;
 			// 	overflow-x: auto;
 			height: 268rpx;
