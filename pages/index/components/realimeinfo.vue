@@ -164,7 +164,6 @@
 				sharemode: false,
 				shareid: '',
 				sharemodeurl: '',
-				type: 5,
 
 				// detail: {},
 				// commentlist: [],

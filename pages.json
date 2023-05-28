@@ -21,7 +21,6 @@
 			"aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
 			"style": {
 				"navigationBarTitleText": "首页",
-				"enablePullDownRefresh": true,
 				"navigationStyle": "custom"
 			},
 			"meta": {
@@ -67,7 +66,8 @@
 			"path": "pages/index/articledetails",
 			"style": {
 				"navigationBarTitleText": "详情",
-				"enablePullDownRefresh": true
+				"enablePullDownRefresh": true,
+				"navigationStyle":"custom"
 			},
 			"meta": {
 				"auth": false,

@@ -131,5 +131,7 @@ page {
 	color: transparent;
 	display: none;
 }
-
+uni-page-body{
+	font-family: -apple-system, "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", SimSun, sans-serif;
+}
 </style>

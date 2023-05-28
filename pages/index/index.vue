@@ -4,10 +4,8 @@
 			<!-- #ifdef H5 -->
 			<view class="content">
 				<!-- #endif -->
-				<!-- #ifdef MP-WEIXIN -->
-				<scroll-view :scroll-y="true" style="height: 100vh;" @scrolltolower="scrollhandle" lower-threshold="50">
+				<scroll-view :scroll-y="true" style="height: 100vh;overflow: scroll;" @scrolltolower="scrollhandle" lower-threshold="50">
 					<view>
-						<!-- #endif -->
 						<!-- #ifdef H5 -->
 						<view class="numlist flex-middle" v-if="userinfo">
 
@@ -229,8 +227,10 @@
 							</view>
 							<view class="jingxuan-box">
 								<u-scroll-list>
-									<view @click="toDetail(item)" class="jingxuan-item" v-for="(item, index) in jingxuanList" :key="index">
-										<image :src="item.f_img"></image>
+									<view @click="toDetail(item)" class="jingxuan-item"
+										v-for="(item, index) in jingxuanList" :key="index">
+										<image v-if="item.f_img" :src="item.f_img"></image>
+										<image v-else src="../../static/images/empty.png" mode=""></image>
 										<!-- <u--image :showLoading="true" :src="item.f_img" width="80px" height="80px" @click="click"></u--image> -->
 										<view>{{item.title}}</view>
 									</view>
@@ -262,8 +262,8 @@
 						</u-sticky>
 
 						<!-- <u-loading-page :loading="pageLoading"></u-loading-page> -->
-						<block v-if="!pageLoading">
-							<view class="bottom" v-if="list && list.length">
+						<block>
+							<view class="bottom">
 								<!-- 热门资讯 -->
 								<realimeinfo v-if="tabsactive==0" :list="list"></realimeinfo>
 								<!-- 热门活动 -->
@@ -276,17 +276,16 @@
 									@acticlehandle="acticlehandle" @integralhandle="integralhandle"
 									:memberId="userinfo.id"></articlelist>
 							</view>
-							<engine-empty v-else :tipText="'暂无列表信息'"></engine-empty>
+							<engine-empty v-if="list.length === 0 && !pageLoading" :tipText="'暂无列表信息'"></engine-empty>
+
 						</block>
-						<view class="bottom beian flex" @click="beian" v-if="!pageLoading">
+						<!-- <view class="bottom beian flex" @click="beian" v-if="!pageLoading">
 							<image class="beian-img2" src="../../static/images/beian-cj.png.gif" mode=""></image>
 							<image class="beian-img1" src="../../static/images/beian.png" mode=""></image>
 							<view class="beian-text">粤ICP备2023010984号-1</view>
-						</view>
-						<!-- #ifdef MP-WEIXIN -->
+						</view> -->
 					</view>
 				</scroll-view>
-				<!-- #endif -->
 				<!-- #ifdef H5 -->
 			</view>
 			<!-- #endif -->
@@ -484,14 +483,15 @@
 				// #endif
 			})
 		},
-		// onReachBottom() {
-		// 	if(this.hasNext) {
-		// 		this.page++;
-		// 		this.getList();
-		// 	}
-		// },
+		onReachBottom() {
+			// console.log(888888);
+			// if (this.hasNext) {
+			// 	this.page++;
+			// 	this.getList();
+			// }
+		},
 		methods: {
-			toDetail(item){
+			toDetail(item) {
 				this.$Router.push({
 					path: '/pages/index/articledetails',
 					query: {
@@ -535,7 +535,7 @@
 				// },
 			},
 			scrollhandle(e) {
-				console.log(e)
+				console.log(99999, e)
 				if (this.hasNext) {
 					this.page++;
 					this.getList();
@@ -677,12 +677,11 @@
 	}
 
 	.container {
-		overflow: hidden;
-		max-height: 100vh;
+
 
 		.content {
-			height: 100vh;
-			overflow: scroll;
+			// height: 100vh;
+			// overflow: scroll;
 			// #ifdef H5
 			margin-top: -2upx;
 			// #endif
@@ -830,9 +829,10 @@
 	}
 
 	.jingxuan {
-		/deep/ .u-scroll-list__indicator{
+		/deep/ .u-scroll-list__indicator {
 			display: none;
 		}
+
 		.jingxuan-title {
 			display: flex;
 			align-items: center;
