@@ -252,11 +252,11 @@
 				// if(this.tabsactivetop == 2){
 				// 	url = 'realinfocategory/kolcategory' //kol分类
 				// }else 
-				if (this.tabsactivetop == 0) {
-					url = 'articlecategory' //文章分类
-				} else {
+				// if (this.tabsactivetop == 0) {
+				// 	url = 'articlecategory' //文章分类
+				// } else {
 					url = 'realinfocategory' //资讯分类
-				}
+				// }
 				this.$http(url, {}, 'get').then((res) => {
 					uni.stopPullDownRefresh()
 					if (this.tabsactivetop == 2) {
