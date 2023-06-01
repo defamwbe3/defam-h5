@@ -42,7 +42,7 @@
 					</view>
 
 					<view class="bottom flex-middle">
-						<view class="text">{{item.created_at}}</view>
+						<view class="text">{{item.created_at_old}}</view>
 					</view>
 					<view class="bottom flex-middle">
 						<view class="tags">{{item.name}}</view>
@@ -83,8 +83,8 @@
 							<view class="bottom flex-middle">
 								<!-- 是否显示置顶 -->
 								<view class="topping" v-if="item.is_top==1">置顶</view>
-								<view class="text">{{item.comments}}评论</view>
-								<view class="text">{{item.created_at}}</view>
+								<!-- <view class="text">{{item.comments}}评论</view> -->
+								<view class="text">{{item.created_at_old}}</view>
 							</view>
 						</view>
 						<view class="right">
@@ -102,8 +102,8 @@
 						<view class="bottom flex-middle">
 							<!-- 是否显示置顶 -->
 							<view class="topping" v-if="item.is_top==1">置顶</view>
-							<view class="text">{{item.comments}}评论</view>
-							<view class="text">{{item.created_at}}</view>
+							<!-- <view class="text">{{item.comments}}评论</view> -->
+							<view class="text">{{item.created_at_old.substring(0,10)}}</view>
 						</view>
 					</view>
 				</view>
@@ -118,8 +118,8 @@
 							<view class="bottom flex-middle">
 								<!-- 是否显示置顶 -->
 								<view class="topping" v-if="item.is_top==1">置顶</view>
-								<view class="text">{{item.comments}}评论</view>
-								<view class="text">{{item.created_at}}</view>
+								<!-- <view class="text">{{item.comments}}评论</view> -->
+								<view class="text">{{item.created_at_old}}</view>
 							</view>
 						</view>
 						<view class="right">
@@ -137,8 +137,8 @@
 						<view class="bottom flex-middle">
 							<!-- 是否显示置顶 -->
 							<view class="topping" v-if="item.is_top==1">置顶</view>
-							<view class="text">{{item.comments}}评论</view>
-							<view class="text">{{item.created_at}}</view>
+							<!-- <view class="text">{{item.comments}}评论</view> -->
+							<view class="text">{{item.created_at_old}}</view>
 						</view>
 					</view>
 				</view>

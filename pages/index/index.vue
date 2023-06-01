@@ -83,7 +83,7 @@
 							</view>
 							<view class="numlist-icons">
 								<view @click="$Router.push('/pages/user/integral/index')">
-									{{userinfo.integral || '0.00'}}
+									{{userinfo.integral || '0'}}
 									<text>
 										<svg width="26" height="25" viewBox="0 0 26 25" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,7 @@
 									</text>
 								</view>
 								<view @click="$Router.push('/pages/user/mymap/myMap')">
-									{{userinfo.suipian_total}}
+									{{userinfo.suipian_total || '0'}}
 									<text><svg width="15" height="12" viewBox="0 0 15 12" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -606,6 +606,7 @@
 					this.pageLoading = false
 					if (this.tabsactive == 0 || this.tabsactive == 2) {
 						for (let item of res.data.data) {
+							item.created_at_old = item.created_at
 							item.created_at = this.$tools.getTimeInterval(new Date(item.created_at).getTime(),
 								new Date().getTime())
 						}
