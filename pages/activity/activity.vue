@@ -146,7 +146,7 @@ export default {
 				this.userinfo = res
 			})
 		}else{
-			this.$store.commit('IS_LOGIN', true);
+			// this.$store.commit('IS_LOGIN', true);
 		}
 		this.getbannerList();
 	},

@@ -262,6 +262,7 @@
 					if (this.tabsactivetop == 2) {
 						this.tabslist = res.data || []
 					} else {
+						res.data.data.splice(1,1)
 						this.tabslist = res.data.data || []
 					}
 					this.tabsactive = 0
