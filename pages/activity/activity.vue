@@ -4,10 +4,8 @@
 			<!-- #ifdef H5 -->
 			<view class="content">
 			<!-- #endif -->
-			<!-- #ifdef MP-WEIXIN -->
 			<scroll-view :scroll-y="true" style="height: 100vh;" @scrolltolower="scrollhandle" 	lower-threshold="50">
 			<view>
-			<!-- #endif -->
 				<u-navbar title="活动" bgColor="#fff" placeholder titleWidth="702rpx" titleStyle="fontWeight: bold">
 					<view slot="left"></view>
 				</u-navbar>
@@ -41,10 +39,8 @@
 					<image class="beian-img1" src="../../static/images/beian.png" mode=""></image>
 					<view class="beian-text">粤ICP备2023010984号-1</view>
 				</view>
-			<!-- #ifdef MP-WEIXIN -->
 			</view>
 			</scroll-view>
-			<!-- #endif -->
 			<!-- #ifdef H5 -->
 			</view>
 			<!-- #endif -->

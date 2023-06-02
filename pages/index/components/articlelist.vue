@@ -197,6 +197,7 @@
 					font-family: Inter-Semi Bold, Inter;
 					font-weight: normal;
 					color: #080F18;
+					max-height: 100rpx;
 					
 				}
 				.images{

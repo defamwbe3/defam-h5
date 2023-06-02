@@ -3,11 +3,9 @@
 		<movable-area>
 			<!-- #ifdef H5 -->
 			<view class="content">
-				<!-- #endif -->
 				<scroll-view :scroll-y="true" style="height: 100vh;overflow: scroll;" @scrolltolower="scrollhandle"
 					lower-threshold="50">
 					<view>
-						<!-- #endif -->
 						<!-- 分类 -->
 						<!-- 这里的文章是从第三方数据爬取的 -->
 						<view class="tabstop flex-center">
@@ -49,10 +47,8 @@
 							<image class="beian-img1" src="../../static/images/beian.png" mode=""></image>
 							<view class="beian-text">粤ICP备2023010984号-1</view>
 						</view> -->
-						<!-- #ifdef MP-WEIXIN -->
 					</view>
 				</scroll-view>
-				<!-- #ifdef H5 -->
 			</view>
 			<!-- #endif -->
 			<!-- 添加拖拽 -->
