@@ -20,7 +20,7 @@
 						<image :src="IMG_URL+'sq_icon.png'" mode=""></image>
 					</view>
 				</view>
-				<view class="title much-ell-two" v-if="item.title">{{item.title}}</view>
+				<view class="title much-ell-two" v-html="item.content"></view>
 				<view class="images flex-between" v-if="item.image_text&&item.image_text.length>0">
 					<image v-for="(items,indexs) in item.image_text" :key="indexs" :src="items" mode=""></image>
 					<view style="width: 210rpx;"></view>

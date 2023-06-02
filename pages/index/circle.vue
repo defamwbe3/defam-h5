@@ -4,10 +4,8 @@
 			<!-- #ifdef H5 -->
 			<view class="content">
 			<!-- #endif -->
-			<!-- #ifdef MP-WEIXIN -->
 			<scroll-view :scroll-y="true" style="height: 100vh;" @scrolltolower="scrollhandle" 	lower-threshold="50">
 			<view>
-			<!-- #endif -->
 				<!-- 搜索 -->
 				<navbarsearch tabsactive="2"></navbarsearch>
 				<u-loading-page :loading="pageLoading"></u-loading-page>
@@ -23,10 +21,8 @@
 					<image class="beian-img1" src="../../static/images/beian.png" mode=""></image>
 					<view class="beian-text">粤ICP备2023010984号-1</view>
 				</view>
-			<!-- #ifdef MP-WEIXIN -->
 			</view>
 			</scroll-view>
-			<!-- #endif -->
 			<!-- #ifdef H5 -->
 			</view>
 			<!-- #endif -->

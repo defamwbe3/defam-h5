@@ -725,6 +725,8 @@
 
 	.numlist {
 		padding: 20upx 0upx 20upx 32upx;
+		justify-content: space-between;
+		padding-right: 30rpx;
 
 		.logo {
 			width: 60rpx;
