@@ -1,6 +1,6 @@
 <template>
 	<view class="detail-wrap bt-1px">
-		<u-navbar :autoBack="true">
+		<u-navbar :autoBack="true" @leftClick="leftClick">
 			<view slot="center">
 				<view class="top-title">
 					<text class="numlist-img">
@@ -61,6 +61,9 @@
 					</text>
 					<text class="numlist-name">{{logoName}}</text>
 				</view>
+			</view>
+			<view slot="right">
+				<view class="openapp" @click="openapp">打开APP</view>
 			</view>
 		</u-navbar>
 		<view class="title" v-if="lang!='short'&&detail.title">{{detail.title}}</view>
@@ -287,6 +290,18 @@
 			}, 'get').then(res => {}).catch(() => {})
 		},
 		methods: {
+			openapp(){
+				window.location.href = 'https://app.defam.info/'
+			},
+			leftClick(e) {
+				var historyLength = window.history.length;
+				if (historyLength === 1) {
+					uni.switchTab({
+					  url: '/pages/index/index',
+					});
+				}
+
+			},
 			dianji(item) {
 				// console.log(item)
 				this.$Router.replace({
@@ -703,6 +718,7 @@
 
 	.name-date {
 		margin: 40rpx 0;
+
 		text:first-of-type {
 			margin-left: 0;
 		}
@@ -719,5 +735,12 @@
 			font-size: 14px;
 			color: #646464;
 		}
+	}
+	.openapp{
+		font-size: 24rpx;
+		background: #1f4894;
+		color: #FFF;
+		border-radius: 24rpx;
+		padding: 10rpx 20rpx;
 	}
 </style>

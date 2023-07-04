@@ -33,7 +33,7 @@
 					<view class="info-right">
 						<view class="username">{{userinfo.nickname}}</view>
 						<view class="nickname flex-middle">
-							<view class="nickname-1">积分：{{userinfo.integral || '0.00'}}</view>
+							<view class="nickname-1">DD：{{userinfo.integral || '0.00'}}</view>
 							<view class="nickname-1">碎片：{{userinfo.suipian_total}}</view>
 						</view>
 					</view>
@@ -101,7 +101,7 @@ export default {
             barList: [
                 {
                     id: 1,
-                    text: '积分商城',
+                    text: 'DD商城',
                     icon: this.$IMG_URL+'me_icon_jfsc.png',
                     path: '/pages/user/integral/index'
                 },

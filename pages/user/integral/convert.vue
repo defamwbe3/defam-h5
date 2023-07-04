@@ -13,7 +13,7 @@
 				<image :src="detail.goods_image" mode=""></image>
 				<view class="right">
 					<view class="right1">{{detail.goods_name}}</view>
-					<view class="right2">{{detail.price}}积分</view>
+					<view class="right2">{{detail.price}}DD</view>
 				</view>
 			</view>
 		</view>

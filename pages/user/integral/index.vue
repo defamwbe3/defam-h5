@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<u-navbar title="积分商城" :bgColor="bgColor" placeholder>
+		<u-navbar title="DD商城" :bgColor="bgColor" placeholder>
 			<view slot="left">
 				<image class="more" :src="IMG_URL+'navnar_icon_back.png'" @click="backhandle"></image>
 			</view>
@@ -24,7 +24,7 @@
 				<view class="box-item" v-for="(item,index) in suipianList" :key="index" @click="jump('/pages/user/integral/integralDetail',{id: item.id})">
 					<image :src="item.image" mode=""></image>
 					<view class="item-name flex-between">
-						<view class="item-name1">{{item.price}}积分</view>
+						<view class="item-name1">{{item.price}}DD</view>
 						<view class="item-name2">已兑:{{item.sale_num}}</view>
 					</view>
 					<view class="item-title much-ell-two">{{item.name}}</view>

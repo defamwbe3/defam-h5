@@ -386,14 +386,14 @@
 				{
 					"path": "integral/index",
 					"style": {
-						"navigationBarTitleText": "积分商城",
+						"navigationBarTitleText": "DD商城",
 						"navigationStyle": "custom",
 						"enablePullDownRefresh": true
 					},
 					"meta": {
 						"auth": true,
 						"async": false,
-						"title": "积分商城",
+						"title": "DD商城",
 						"group": "用户"
 					}
 				},
@@ -537,14 +537,14 @@
 				{
 					"path": "award/coin",
 					"style": {
-						"navigationBarTitleText": "积分兑换规则",
+						"navigationBarTitleText": "DD兑换规则",
 						"navigationStyle": "custom",
 						"enablePullDownRefresh": true
 					},
 					"meta": {
 						"auth": true,
 						"async": false,
-						"title": "积分兑换规则",
+						"title": "DD兑换规则",
 						"group": "用户"
 					}
 				},

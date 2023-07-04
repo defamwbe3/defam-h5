@@ -28,7 +28,7 @@
 
 		<view class="bottom">
 			<view class="bottom-cont flex-between">
-				<view class="bottom-left">{{details.price}}积分</view>
+				<view class="bottom-left">{{details.price}}DD</view>
 				<view class="bottom-right" @click="show = true">立即兑换</view>
 			</view>
 		</view>
@@ -61,7 +61,7 @@
 				
 
 				<view class="tag_btn flex-between">
-					<view class="btn-left">{{skuStock}}积分</view>
+					<view class="btn-left">{{skuStock}}DD</view>
 					<view class="btn-right" @click="pay()">立即兑换</view>
 				</view>
 			</view>

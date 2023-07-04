@@ -7,7 +7,7 @@
 				<view class="logo">
 					<image src="" mode=""></image>
 				</view>
-				<view class="item flex-middle">积分：{{userinfo.integral || '0.00'}}<text @click="$Router.push('/pages/user/integral/index')">去兑换</text></view>
+				<view class="item flex-middle">DD：{{userinfo.integral || '0.00'}}<text @click="$Router.push('/pages/user/integral/index')">去兑换</text></view>
 				<view class="item flex-middle">藏宝图碎片：{{userinfo.suipian_total}}<text @click="$Router.push('/pages/user/mymap/myMap')">去兑换</text></view>
 			</view> -->
 			<view class="search-box" @click="toLogin()">

@@ -5,7 +5,7 @@
 				<image src="/static/images/denglu.png" mode=""></image>
 			</view>
 			<view class="text1">您尚未登录</view>
-			<view class="text">登录赠送积分</view>
+			<view class="text">登录赠送DD</view>
 			<view class="btns">
 				<button class="buttons" @click="jump('/pages/public/login',{})">前往登录</button>
 				<button class="buttons button" @click="isLoginhandle">以后再说</button>

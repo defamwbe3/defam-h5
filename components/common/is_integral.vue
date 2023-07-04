@@ -4,7 +4,7 @@
 		 :safeAreaInsetBottom="false" @close="tozizhi">
 			<view class="mode">
 				<image :style="integramessagedata.id?'borderRadius: 10rpx;marginTop:20px':''" :src="integramessagedata.image||'/static/images/jifen.png'" mode=""></image>
-				<view class="title">{{integramessagedata.name||'获得积分'}}</view>
+				<view class="title">{{integramessagedata.name||'获得DD'}}</view>
 				<view class="con">{{integramessage}}</view>
 				<view class="btns flex-between">
 				    <button class="button" @click.stop="tozizhi">确定</button>

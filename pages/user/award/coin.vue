@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<u-navbar title="积分兑换规则" :bgColor="bgColor" placeholder>
+		<u-navbar title="DD兑换规则" :bgColor="bgColor" placeholder>
 			<view slot="left">
 				<image class="more-1" :src="IMG_URL+'navnar_icon_back.png'" @click="backhandle"></image>
 			</view>
@@ -32,7 +32,7 @@
 			this.getList();
 		},
 		methods: {
-			// 获取积分兑换规则
+			// 获取DD兑换规则
 			getList(){
 				this.$http('agreement', {
 					code: 'point',

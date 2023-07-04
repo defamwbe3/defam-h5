@@ -15,7 +15,7 @@
 								<view v-else-if="grouponBuyType === 'groupon'">
 									￥{{ currentSkuPrice.groupon_price || (goodsInfo.activity_type === 'groupon' ? goodsInfo.groupon_price : goodsInfo.point) }}
 								</view>
-								<view v-else>{{ currentSkuPrice.point || goodsInfo.point }}消费积分</view>
+								<view v-else>{{ currentSkuPrice.point || goodsInfo.point }}消费DD</view>
 							</view>
 							<text class="stock">库存{{ currentSkuPrice.stock || goodsInfo.stock }}件</text>
 						</view>

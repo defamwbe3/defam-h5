@@ -18,18 +18,18 @@
 				inactiveStyle="color: #666666" lineWidth="30"></u-tabs>
 			</view>
 		</u-sticky>
-		<!-- 我的积分 -->
+		<!-- 我的DD -->
 		<view class="box" v-if="tabsactive == 0">
 			<view class="header">
 				<image class="header-image" :src="IMG_URL+'bg.png'" mode="" ></image>
 				<view class="header-left">
 					<view class="header-left1 flex-middle">
-						当前积分
+						当前DD
 						<image :src="IMG_URL+'question.png'" mode=""  @click.stop="$Router.push('/pages/user/award/coin')"></image>
 					</view>
 					<view class="header-left2">{{userinfo.integral || '0.00'}}</view>
 					<view class="header-left3 flex" @click.stop="$Router.push('/pages/user/integral/index')">
-						积分商城
+						DD商城
 						<image class="more" :src="IMG_URL+'icon_more.png'"></image>
 					</view>
 				</view>
@@ -42,7 +42,7 @@
 				</view>
 				<view class="item-right" :class="item.amount >= 0? 'blacks': '' "><text v-if="item.amount > 0">+</text>{{item.amount}}</view>
 			</view>
-			<engine-empty v-if="!list.length" :tipText="'暂无积分消费列表信息'"></engine-empty>
+			<engine-empty v-if="!list.length" :tipText="'暂无DD消费列表信息'"></engine-empty>
 		</view>
 		
 		<!-- 我的碎片 -->
@@ -72,7 +72,7 @@
 				IMG_URL: this.$IMG_URL,
 				bgColor: '#FAFAFE',
 				tabslist: [
-					{id: 0,name: '我的积分',},
+					{id: 0,name: '我的DD',},
 					{id: 1,name: '我的碎片'},
 				],
 				tabsactive: 0,
@@ -175,7 +175,7 @@
 			margin-top: 10rpx;
 		}
 	}
-	// 我的积分
+	// 我的DD
 	.box{
 		margin: 0rpx 24rpx;
 		.header{

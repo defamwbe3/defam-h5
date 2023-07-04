@@ -24,7 +24,7 @@
 					<image class="images" :src="item.goods[0].goods_image" mode=""></image>
 					<view class="item-bot-box">
 						<view class="item-bot-text">{{item.goods[0].goods_name}}</view>
-						<view class="item-bot-text1">{{item.amount}}积分</view>
+						<view class="item-bot-text1">{{item.amount}}DD</view>
 					</view>
 					
 				</view>
