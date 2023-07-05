@@ -386,14 +386,14 @@
 				{
 					"path": "integral/index",
 					"style": {
-						"navigationBarTitleText": "DD商城",
+						"navigationBarTitleText": "DD集市",
 						"navigationStyle": "custom",
 						"enablePullDownRefresh": true
 					},
 					"meta": {
 						"auth": true,
 						"async": false,
-						"title": "DD商城",
+						"title": "DD集市",
 						"group": "用户"
 					}
 				},

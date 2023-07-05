@@ -29,7 +29,7 @@
 					</view>
 					<view class="header-left2">{{userinfo.integral || '0.00'}}</view>
 					<view class="header-left3 flex" @click.stop="$Router.push('/pages/user/integral/index')">
-						DD商城
+						DD集市
 						<image class="more" :src="IMG_URL+'icon_more.png'"></image>
 					</view>
 				</view>

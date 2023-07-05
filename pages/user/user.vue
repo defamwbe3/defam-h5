@@ -101,7 +101,7 @@ export default {
             barList: [
                 {
                     id: 1,
-                    text: 'DD商城',
+                    text: 'DD集市',
                     icon: this.$IMG_URL+'me_icon_jfsc.png',
                     path: '/pages/user/integral/index'
                 },

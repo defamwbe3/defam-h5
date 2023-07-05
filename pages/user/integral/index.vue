@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<u-navbar title="DD商城" :bgColor="bgColor" placeholder>
+		<u-navbar title="DD集市" :bgColor="bgColor" placeholder>
 			<view slot="left">
 				<image class="more" :src="IMG_URL+'navnar_icon_back.png'" @click="backhandle"></image>
 			</view>
