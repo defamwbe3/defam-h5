@@ -66,6 +66,7 @@
 				<view class="openapp" @click="openapp">打开APP</view>
 			</view>
 		</u-navbar>
+		<div style="height: 100rpx;"></div>
 		<view class="title" v-if="lang!='short'&&detail.title">{{detail.title}}</view>
 		<!-- <view class="information flex-between">
 			<view class="left flex-middle">
@@ -742,5 +743,10 @@
 		color: #FFF;
 		border-radius: 24rpx;
 		padding: 10rpx 20rpx;
+	}
+</style>
+<style scoped>
+	.detail-wrap .title{
+		padding-top: 0;
 	}
 </style>

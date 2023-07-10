@@ -59,6 +59,7 @@
 			},
 			copy(){
 				let _this = this
+				console.log(SHARE_url , _this.url);
 				uni.setClipboardData({
 					data: SHARE_url + _this.url,
 					success: function(data) {
