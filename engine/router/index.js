@@ -74,12 +74,12 @@ router.beforeEach((to, from, next) => {
 					canshu+=item+"="+to.query[item]
 				}
 			})
-			var url="https://pc.cjlbzx.szyqa.com/#" + to.meta.pcUrl+"?"+canshu+to.meta.c;  //测试站
+			var url="https://pc.defam.info/#" + to.meta.pcUrl+"?"+canshu+to.meta.c;  //测试站
 			// var url="https://pc.defam.info/#" + to.meta.pcUrl+"?"+canshu+to.meta.c; //国内正式
 			// var url="https://pc.defam.io/#" + to.meta.pcUrl+"?"+canshu+to.meta.c; //国外正式
 			// console.log(url)
 		}else{
-			var url="https://pc.cjlbzx.szyqa.com/#" + to.meta.pcUrl;  //测试站
+			var url="https://pc.defam.info/#" + to.meta.pcUrl;  //测试站
 			// var url="https://pc.defam.info/#" + to.meta.pcUrl;  //国内正式
 			// var url="https://pc.defam.io/#" + to.meta.pcUrl;  //国外正式
 			// console.log(url)

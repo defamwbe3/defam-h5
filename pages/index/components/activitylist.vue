@@ -16,9 +16,9 @@
 					</view>	
 					<view class="bottom flex-between">
 						<view class="text">已报名：{{item.registered_number}}</view>	
-						<button class="button buttons" v-if="item.status=='hidden'">报名已结束</button>
+						<button class="button buttons" v-if="item.status=='hidden'">已结束</button>
 						<block v-else>
-							<button class="button" v-if="item.is_registered==0">报名活动</button>
+							<button class="button" v-if="item.is_registered==0">进行中</button>
 							<button class="button buttons" v-else>已报名</button>
 						</block>
 					</view>
