@@ -40,7 +40,7 @@
 			</view>
 			<view class="form-row flex-middle">
 				<image :src="IMG_URL +'sign_icon_dz.png'" mode=""></image>
-				<input type="text" v-model="formss.Polygin" placeholder="请输入Polygon地址" placeholder-class="pl" />
+				<input type="text" v-model="formss.Polygin" placeholder="请输入BSC地址" placeholder-class="pl" />
 			</view>
 			<button class="btn" :loading="loading" :disabled="loading" @click="sumbithandleEmail">注册</button>
 		</view>
@@ -73,7 +73,7 @@
 			</view>
 			<view class="form-row flex-middle">
 				<image :src="IMG_URL +'sign_icon_dz.png'" mode=""></image>
-				<input type="text" v-model="form.Polygin" placeholder="请输入Polygon地址" placeholder-class="pl" />
+				<input type="text" v-model="form.Polygin" placeholder="请输入BSC地址" placeholder-class="pl" />
 			</view>
 			<button class="btn" :loading="loading" :disabled="loading" @click="sumbithandle">注册</button>
 		</view>
@@ -137,14 +137,14 @@ export default {
 				{ name: 'code', errmsg: '请输入验证码' },
 				{ name: 'password', errmsg: '请输入密码' },
 				{ name: 'password_confirm', errmsg: '请输入确认密码' },
-				// { name: 'Polygin', errmsg: '请输入Polygon地址' },
+				// { name: 'Polygin', errmsg: '请输入BSC地址' },
 			],
 			Rules2: [
 				{ name: 'email', errmsg: '请输入邮箱号' },
 				{ name: 'code', errmsg: '请输入验证码' },
 				{ name: 'password', errmsg: '请输入密码' },
 				{ name: 'password_confirm', errmsg: '请输入确认密码' },
-				// { name: 'Polygin', errmsg: '请输入Polygon地址' },
+				// { name: 'Polygin', errmsg: '请输入BSC地址' },
 			],
 			codetext: '发送验证码',
 			tiemJudge: true,

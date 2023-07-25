@@ -102,6 +102,9 @@
 						this.loading = false
 						if (res.code == 10000) {
 							this.$u.toast('修改成功');
+							let userInfo = JSON.parse(uni.getStorageSync('userInfo'))
+							userInfo['wallet']['address'] = this.form.address;
+							uni.setStorageSync('userInfo', JSON.stringify(userInfo))
 							setTimeout(()=>{
 								this.$Router.back()
 							},1000)

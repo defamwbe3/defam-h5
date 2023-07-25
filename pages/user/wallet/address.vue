@@ -15,7 +15,7 @@
 							<image :src="IMG_URL+ 'icon_bianji.png'" mode=""
 								@click.stop="jump('/pages/user/wallet/newsaddress',{id:item.id,title: item.title,address: item.address})">
 							</image>
-							<image :src="IMG_URL+ 'icon_shanchu.png'" mode="" @click="detlect(item)"></image>
+							<!-- <image :src="IMG_URL+ 'icon_shanchu.png'" mode="" @click="detlect(item)"></image> -->
 						</view>
 					</view>
 					<view class="wallet-item-bottom">
@@ -24,7 +24,7 @@
 				</view>
 			</view>
 			<engine-empty v-else :tipText="'暂无钱包地址列表'"></engine-empty>
-			<button class="btn" @click="jump('/pages/user/wallet/newsaddress',{type: 'add'})">新增地址</button>
+			<!-- <button class="btn" @click="jump('/pages/user/wallet/newsaddress',{type: 'add'})">新增地址</button> -->
 		</block>
 	</view>
 </template>

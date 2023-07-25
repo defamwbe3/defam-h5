@@ -9,7 +9,7 @@
 		</u-navbar>
 		<view class="wrap">
 			<textarea class="ta" v-model="form.content" type="textarea" placeholder="快来发表你的观点~"placeholder-style="color:#BEBEC0"
-			 maxlength="-1" @input="inputcontent"/>
+			 maxlength="300" @input="inputcontent"/>
 			<view class="pwrap">
 				<view class="upload flex-center" v-for="(i, index) in form.images" :key="index">
 					<image class="thumb" mode="aspectFill" :src="i" />

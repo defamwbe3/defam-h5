@@ -29,7 +29,7 @@
 		<view class="bottom">
 			<view class="bottom-cont flex-between">
 				<view class="bottom-left">{{details.price}}DD</view>
-				<view class="bottom-right" @click="show = true">立即兑换</view>
+				<view class="bottom-right" @click="isBandWallet">立即兑换</view>
 			</view>
 		</view>
 
@@ -66,10 +66,20 @@
 				</view>
 			</view>
 		</u-popup>
+		<view >
+			<u-modal :show="bandDialog"  :content="content" confirmText='去绑定' @confirm="toWallet">
+				<view class="slot-content">
+					<rich-text :nodes="content"></rich-text>
+				</view>
+				
+			</u-modal>
+		</view>
 	</view>
+	
 </template>
 
 <script>
+import user from '../../../engine/store/modules/user';
 	export default {
 		components: {
 
@@ -87,6 +97,8 @@
 				sku_price: [],
 				skuStock: '0',
 				skuString: '',
+				bandDialog: false,
+				content: `<div>未绑定钱包地址，请绑定</div>`
 			}
 		},
 		onLoad() {
@@ -99,6 +111,21 @@
 			this.getDetail();
 		},
 		methods: {
+			toWallet(){
+				this.bandDialog = false;
+				this.$Router.push({
+					path: '/pages/user/wallet/address'
+				});
+			},
+			isBandWallet(){
+				 let userInfo = JSON.parse(uni.getStorageSync('userInfo'));
+				 console.log('userinfo', userInfo);
+				 if (userInfo['wallet']['address'] == null || userInfo['wallet']['address'] == '') {
+				 	this.bandDialog = true;
+				 	return;
+				 }
+				this.show = true
+			},
 			// 获取商品详情
 			getDetail() {
 				this.$http('goods/' + this.id, {}, 'get').then((res) => {
@@ -160,6 +187,13 @@
 			},
 			// 下单接口
 			pay() {
+				// 如果 钱包地址 没有数据 不能兑换
+				let userInfo = JSON.parse(uni.getStorageSync('userInfo'));
+				console.log('userinfo', userInfo);
+				if (userInfo['wallet']['address'] == null || userInfo['wallet']['address'] == '') {
+					this.bandDialog = true;
+					return;
+				}
 				this.$http('order', {
 					goods_id: this.id,
 					sku_price_id: this.skuString,

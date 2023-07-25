@@ -611,7 +611,7 @@
 					this.pageLoading = false
 					if (this.tabsactive == 0 || this.tabsactive == 2) {
 						for (let item of res.data.data) {
-							item.created_at_old = item.created_at
+							item.created_at_old = item.updated_at
 							item.created_at = this.$tools.getTimeInterval(new Date(item.created_at).getTime(),
 								new Date().getTime())
 						}

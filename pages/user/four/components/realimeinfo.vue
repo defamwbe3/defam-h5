@@ -9,7 +9,7 @@
 						<!-- 是否显示置顶 -->
 						<view class="topping" v-if="item.action_txt.is_top==1">置顶</view>
 						<view class="text">{{item.action_txt.comments}}评论</view>
-						<view class="text">{{item.action_txt.created_at}}</view>
+						<view class="text">{{item.action_txt.updated_at}}</view>
 					</view>
 				</view>
 				<view class="right">
@@ -27,7 +27,7 @@
 					<!-- 是否显示置顶 -->
 					<view class="topping" v-if="item.action_txt.is_top==1">置顶</view>
 					<view class="text">{{item.action_txt.comments}}评论</view>
-					<view class="text">{{item.action_txt.created_at}}</view>
+					<view class="text">{{item.action_txt.updated_at}}</view>
 				</view>
 			</view>
 		</view>
