@@ -669,7 +669,10 @@
 						"auth": false,
 						"async": false,
 						"title": "注册",
-						"group": "公共"
+						"group": "公共",
+						"pcUrl": "/",
+						"qu":"usercode",
+						"c": "&register=true"
 					}
 				},
 				{
