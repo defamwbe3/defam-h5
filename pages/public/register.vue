@@ -80,7 +80,7 @@
 		
 		
 		<view class="text-box flex">
-			<view class="text-tips" v-if="fenlei == 1" @click="fenlei = 2">邮箱注册</view>
+			<!-- <view class="text-tips" v-if="fenlei == 1" @click="fenlei = 2">邮箱注册</view> -->
 			<view class="text-tips" v-if="fenlei == 2" @click="fenlei = 1">手机号注册</view>
 			<text class="xian">|</text>
 			<view class="text-tips" @click="$Router.replace('/pages/public/login')">去登陆</view>
