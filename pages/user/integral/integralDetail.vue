@@ -20,10 +20,8 @@
 		</view>
 		<!-- 商品详情 -->
 		<view class="detail">
-			<view class="detail-top">商品详情</view>
-			<view class="detail-img">
-				<image :src="details.image" mode=""></image>
-			</view>
+			<view class="detail-top">商品详情<view v-if="details.is_hidden_detail" style="color: blue;font-size: 14px;display: inline;">（支付DD才能查看盲盒内容）</view></view>
+			<view style="padding: 10px 10px;" v-html="details.detail"></view>
 		</view>
 
 		<view class="bottom">
