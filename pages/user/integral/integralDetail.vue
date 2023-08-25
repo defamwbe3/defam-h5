@@ -192,6 +192,11 @@ import user from '../../../engine/store/modules/user';
 					this.bandDialog = true;
 					return;
 				}
+				// 盲盒商品只需要兑换一次
+				if (this.details.is_blind && !this.details.is_hidden_detail) {
+					this.$u.toast('已兑换，请勿重复兑换');
+					return;
+				}
 				this.$http('order', {
 					goods_id: this.id,
 					sku_price_id: this.skuString,
